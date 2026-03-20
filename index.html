@@ -416,6 +416,9 @@
     </div>
 
     <div class="quiz-container">
+        <div style="margin-bottom: 20px; text-align: center; color: #666; font-size: 0.95em;">
+            Questões respondidas: <strong id="answeredCount">0</strong>/<strong>20</strong>
+        </div>
         <div class="progress-bar">
             <div class="progress-fill" id="progressFill"></div>
         </div>
@@ -564,6 +567,7 @@
         const answeredCount = Object.keys(answered).length;
         const percentage = (answeredCount / questions.length) * 100;
         document.getElementById('progressFill').style.width = percentage + '%';
+        document.getElementById('answeredCount').textContent = answeredCount;
     }
 
     function finalizarSimulado() {
