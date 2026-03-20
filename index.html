@@ -107,9 +107,9 @@
             width: 100%;
             max-width: 900px;
             background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border-radius: 0;
+            overflow: visible;
+            box-shadow: none;
         }
 
         .quiz-header {
@@ -117,6 +117,14 @@
             color: white;
             padding: 25px;
             text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            max-width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .quiz-header h1 {
@@ -141,8 +149,27 @@
 
         .quiz-container {
             padding: 40px;
-            max-height: 70vh;
+            padding-top: 280px;
+            max-height: 100vh;
             overflow-y: auto;
+            margin-top: 0;
+        }
+
+        .progress-section {
+            position: fixed;
+            top: 200px;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 20px;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            max-width: 100%;
+        }
+
+        .progress-section > div {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .progress-bar {
@@ -415,13 +442,18 @@
         </div>
     </div>
 
+    <div class="progress-section">
+        <div>
+            <div style="margin-bottom: 15px; text-align: center; color: #666; font-size: 0.95em;">
+                Questões respondidas: <strong id="answeredCount">0</strong>/<strong>20</strong>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="quiz-container">
-        <div style="margin-bottom: 20px; text-align: center; color: #666; font-size: 0.95em;">
-            Questões respondidas: <strong id="answeredCount">0</strong>/<strong>20</strong>
-        </div>
-        <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
-        </div>
         <div id="quiz-content"></div>
         <button class="btn-finish-quiz" onclick="finalizarSimulado()">Finalizar Simulado</button>
     </div>
