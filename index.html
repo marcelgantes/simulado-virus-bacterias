@@ -3,70 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulado: Vírus e Bactérias - 2º Ano</title>
+    <title>Simulado Biologia: Vírus e Bactérias - 2º Ano</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; }
-        .quiz-container { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; text-align: center; }
-        .question { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
-        .question-title { font-weight: bold; font-size: 1.1em; margin-bottom: 10px; display: block; }
-        .options { list-style-type: none; padding: 0; }
-        .options li { margin-bottom: 8px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; transition: background 0.3s; }
-        .options li:hover { background-color: #e9ecef; }
-        .correct { background-color: #d4edda !important; border-color: #c3e6cb !important; color: #155724; }
-        .incorrect { background-color: #f8d7da !important; border-color: #f5c6cb !important; color: #721c24; }
-        .rationale { margin-top: 10px; font-size: 0.9em; display: none; padding: 10px; border-left: 4px solid #3498db; background: #f0f7fd; }
-        .btn-check { display: block; margin: 20px auto; padding: 10px 20px; background: #3498db; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; }
-        .btn-check:hover { background: #2980b9; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f0f2f5; }
+        .quiz-header { background: #2c3e50; color: white; padding: 20px; border-radius: 8px 8px 0 0; text-align: center; }
+        .quiz-container { background: #fff; padding: 30px; border-radius: 0 0 8px 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .question { margin-bottom: 35px; border-bottom: 2px solid #f0f2f5; padding-bottom: 25px; }
+        .question-text { font-weight: 600; font-size: 1.15em; margin-bottom: 15px; display: block; color: #2c3e50; }
+        .options { list-style: none; padding: 0; }
+        .options li { margin-bottom: 10px; padding: 12px 15px; border: 1px solid #d1d8e0; border-radius: 6px; cursor: pointer; transition: all 0.2s; background: #fff; }
+        .options li:hover { background-color: #f1f2f6; border-color: #3498db; }
+        .correct { background-color: #d4edda !important; border-color: #28a745 !important; color: #155724; font-weight: bold; }
+        .incorrect { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #721c24; }
+        .rationale { margin-top: 15px; display: none; padding: 15px; border-left: 5px solid #3498db; background: #eef7fe; border-radius: 4px; font-size: 0.95em; }
+        .btn-reset { display: block; width: 200px; margin: 40px auto; padding: 12px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; font-weight: bold; }
+        .btn-reset:hover { background: #2980b9; }
     </style>
 </head>
 <body>
 
-<div class="quiz-container">
+<div class="quiz-header">
     <h1>Simulado: Vírus e Bactérias</h1>
-    <p style="text-align: center; color: #666;">Preparatório Estilo ENEM para o 2º Ano do Ensino Médio</p>
+    <p>Ciências da Natureza - 2º Ano Ensino Médio</p>
+</div>
 
-    <div id="quiz">
-        <div class="question">
-            <span class="question-title">1. Por que antibióticos não possuem eficácia contra doenças causadas por vírus?</span>
-            <ul class="options">
-                <li onclick="check(this, false, 'r1')">Possuem membranas plasmáticas mais resistentes.</li>
-                <li onclick="check(this, true, 'r1')">Vírus são acelulares e não possuem metabolismo próprio (alvo do remédio).</li>
-                <li onclick="check(this, false, 'r1')">O material genético viral é composto exclusivamente por RNA.</li>
-                <li onclick="check(this, false, 'r1')">Vírus são eucariontes simplificados.</li>
-            </ul>
-            <div id="r1" class="rationale"><strong>Explicação:</strong> Antibióticos atacam processos metabólicos. Como vírus usam a célula hospedeira, não há o que o remédio atacar sem ferir a célula.</div>
+<div class="quiz-container">
+    <div id="quiz-content">
         </div>
-
-        <div class="question">
-            <span class="question-title">2. O mecanismo biológico pelo qual a vacina protege o indivíduo baseia-se na:</span>
-            <ul class="options">
-                <li onclick="check(this, false, 'r2')">Produção imediata de toxinas neutralizantes.</li>
-                <li onclick="check(this, true, 'r2')">Estimulação para formação de células de memória e anticorpos.</li>
-                <li onclick="check(this, false, 'r2')">Destruição direta dos capsídeos virais.</li>
-                <li onclick="check(this, false, 'r2')">Alteração do DNA das células humanas.</li>
-            </ul>
-            <div id="r2" class="rationale"><strong>Explicação:</strong> A vacina é uma imunização ativa: treina o corpo para reconhecer o invasor no futuro.</div>
-        </div>
-
-        <p style="text-align: center; font-style: italic;">(O código acima contém as duas primeiras questões como exemplo de estrutura funcional.)</p>
-    </div>
+    <button class="btn-reset" onclick="window.location.reload()">Reiniciar Simulado</button>
 </div>
 
 <script>
+    const questions = [
+        { q: "Por que antibióticos não possuem eficácia contra doenças causadas por vírus?", options: ["Possuem membranas plasmáticas mais resistentes.", "Vírus são acelulares e não possuem metabolismo próprio.", "O material genético viral é composto exclusivamente por RNA.", "Vírus são eucariontes simplificados."], correct: 1, why: "Antibióticos atacam processos metabólicos bacterianos. Vírus dependem da célula hospedeira." },
+        { q: "O mecanismo biológico pelo qual a vacina protege o indivíduo baseia-se na:", options: ["Produção imediata de toxinas neutralizantes.", "Estimulação para formação de células de memória e anticorpos.", "Destruição direta dos capsídeos virais.", "Alteração do DNA das células humanas."], correct: 1, why: "A vacina é uma imunização ativa que treina o sistema imunológico." },
+        { q: "A leptospirose, comum após enchentes, é causada por:", options: ["Um vírus do mosquito Aedes aegypti.", "Uma bactéria na urina de ratos que penetra na pele.", "Um fungo de ambientes úmidos.", "Um protozoário de alimentos crus."], correct: 1, why: "A bactéria Leptospira é transmitida pelo contato com água contaminada por urina de roedores." },
+        { q: "A absorção de fragmentos de DNA do meio ambiente por uma bactéria é chamada de:", options: ["Transdução", "Conjugação", "Transformação", "Bipartição"], correct: 2, why: "Transformação é a captação de DNA livre; Conjugação exige contato direto e Transdução usa vírus." },
+        { q: "Sobre a tuberculose, destaca-se que:", options: ["É prevenida apenas por máscaras.", "O agente é o Mycobacterium tuberculosis e a vacina é a BCG.", "Não se usa antibióticos no tratamento.", "É uma virose de transmissão hídrica."], correct: 1, why: "A BCG é a vacina fundamental para prevenir formas graves dessa bactéria." },
+        { q: "Um patógeno com apenas um tipo de ácido nucleico e sem ribossomos é um:", options: ["Fungo", "Protozoário", "Vírus", "Arqueia"], correct: 2, why: "Vírus não possuem ribossomos nem metabolismo, sendo acelulares." },
+        { q: "No ciclo lisogênico de um vírus, ocorre:", options: ["Destruição imediata da célula.", "Integração do DNA viral ao DNA da bactéria (latência).", "Produção de capsídeos antes do DNA.", "Transformação da bactéria em eucarionte."], correct: 1, why: "No ciclo lisogênico, o vírus permanece 'escondido' sem matar a célula imediatamente." },
+        { q: "A resistência bacteriana (superbactérias) é causada principalmente por:", options: ["Mutação induzida pelo remédio.", "Uso indiscriminado de antibióticos que seleciona as resistentes.", "Transformação de bactérias em vírus.", "Higiene excessiva que mata o sistema imune."], correct: 1, why: "O antibiótico atua como agente seletivo, não como causador da mutação." },
+        { q: "Dengue e Sífilis são causadas, respectivamente, por:", options: ["Bactéria e Vírus.", "Vírus e Bactéria.", "Protozoário e Vírus.", "Vírus e Protozoário."], correct: 1, why: "Dengue é viral (arbovirose) e Sífilis é bacteriana (IST)." },
+        { q: "A parede celular bacteriana serve para:", options: ["Controlar a entrada de nutrientes.", "Conferir forma e proteção contra pressão osmótica.", "Sintetizar proteínas virais.", "Armazenar plasmídeos."], correct: 1, why: "A rigidez da parede de peptidoglicano mantém a integridade física da bactéria." },
+        { q: "Vírus são chamados de parasitas intracelulares obrigatórios porque:", options: ["Vivem em harmonia com a célula.", "Dependem da maquinaria da célula para se replicar.", "Degradam matéria orgânica morta.", "São procariontes."], correct: 1, why: "Sem uma célula hospedeira, o vírus é apenas uma partícula inerte (virion)." },
+        { q: "O HIV é combatido com antirretrovirais que focam em:", options: ["Matar a bactéria oportunista.", "Inibir enzimas como a transcriptase reversa.", "Curar a AIDS com uma única dose.", "Substituir o DNA humano por viral."], correct: 1, why: "Drogas antirretrovirais impedem que o vírus converta seu RNA em DNA." },
+        { q: "Por que a vacina da gripe deve ser anual?", options: ["Porque as bactérias ficam resistentes.", "Devido às mutações constantes nas proteínas do vírus.", "Porque o vírus vira uma célula.", "Porque antibióticos param de funcionar."], correct: 1, why: "Mutações mudam a 'aparência' do vírus para o sistema imune, exigindo novas vacinas." },
+        { q: "Estruturas circulares de DNA extra que levam genes de resistência são:", options: ["Ribossomos", "Plasmídeos", "Mesossomos", "Cápsulas"], correct: 1, why: "Plasmídeos são fundamentais na transferência horizontal de genes de resistência." },
+        { q: "A Febre Maculosa é causada por:", options: ["Um vírus respiratório.", "Uma bactéria transmitida por carrapatos.", "Vermes intestinais.", "Picada de mosquito Aedes."], correct: 1, why: "A bactéria Rickettsia rickettsii é transmitida pelo carrapato-estrela." },
+        { q: "Penicilinas são seguras para humanos porque atacam a parede celular, e:", options: ["Humanos absorvem o remédio como energia.", "Células humanas não possuem parede celular.", "Atacam apenas o núcleo celular.", "O fígado as neutraliza na hora."], correct: 1, why: "A toxicidade seletiva foca em estruturas que nós não temos (como a parede de peptidoglicano)." },
+        { q: "A enzima transcriptase reversa é característica de:", options: ["Bactérias", "Retrovírus (como HIV)", "Fungos", "Bacteriófagos de DNA"], correct: 1, why: "Ela permite que o RNA viral dite a formação de DNA, invertendo o fluxo normal." },
+        { q: "Sabão e álcool funcionam contra vírus envelopados pois:", options: ["Quebram o DNA.", "Dissolvem o envelope lipídico (gordura).", "Causam mutações.", "Impedem a bactéria de respirar."], correct: 1, why: "O envelope viral é feito de gordura, que é dissolvida por detergentes e álcool." },
+        { q: "O botulismo ocorre em latas de conserva porque a bactéria é:", options: ["Aeróbia obrigatória.", "Anaeróbia e forma esporos resistentes.", "Um vírus gigante.", "Transmitida por insetos."], correct: 1, why: "Ambientes sem oxigênio e fechados favorecem o crescimento e a liberação de toxinas da C. botulinum." },
+        { q: "Aumento de leucócitos no hemograma geralmente indica:", options: ["Desidratação.", "Resposta a uma infecção (vírus ou bactéria).", "Falta de ferro.", "Radiação UV."], correct: 1, why: "Leucócitos são células de defesa que se multiplicam para combater patógenos." }
+    ];
+
+    const content = document.getElementById('quiz-content');
+
+    questions.forEach((item, index) => {
+        let qDiv = document.createElement('div');
+        qDiv.className = 'question';
+        
+        let optionsHtml = item.options.map((opt, i) => 
+            `<li onclick="check(this, ${i === item.correct}, 'r${index}')">${opt}</li>`
+        ).join('');
+
+        qDiv.innerHTML = `
+            <span class="question-text">${index + 1}. ${item.q}</span>
+            <ul class="options">${optionsHtml}</ul>
+            <div id="r${index}" class="rationale"><strong>Explicação:</strong> ${item.why}</div>
+        `;
+        content.appendChild(qDiv);
+    });
+
     function check(el, isCorrect, rationaleId) {
-        const options = el.parentElement.querySelectorAll('li');
+        const parent = el.parentElement;
+        const options = parent.querySelectorAll('li');
+        
+        // Bloquear outros cliques
         options.forEach(opt => opt.style.pointerEvents = 'none');
         
         if (isCorrect) {
             el.classList.add('correct');
         } else {
             el.classList.add('incorrect');
-            // Destacar a correta
-            options.forEach(opt => {
-                // Aqui você precisaria marcar qual é a correta no HTML para o script achar
-            });
+            // Mostrar a correta para o aluno aprender
+            const correctIndex = questions[parseInt(rationaleId.substring(1))].correct;
+            options[correctIndex].classList.add('correct');
         }
+        
         document.getElementById(rationaleId).style.display = 'block';
     }
 </script>
